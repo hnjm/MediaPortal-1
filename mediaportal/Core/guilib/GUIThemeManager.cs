@@ -73,7 +73,11 @@ namespace MediaPortal.GUI.Library
       // Reactivate the current window and refocus on the control used to change the theme.
       // This applies the new theme to the current window immediately.
       GUIWindowManager.ResetAllControls();
-      GUIWindowManager.ActivateWindow(GUIWindowManager.ActiveWindow, true, true, _focusControlId);
+      GUIWindowManager.SendThreadCallbackAndWait((p1, p2, p3) =>
+      {
+        GUIWindowManager.ActivateWindow(GUIWindowManager.ActiveWindow, true, true, _focusControlId);
+        return 0;
+      }, 0, 0, null);
 
       GUIWaitCursor.Hide();
     }
