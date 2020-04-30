@@ -38,10 +38,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.SuspendLayout();
       // 
-      // labelSectionHeader
-      // 
-      this.labelSectionHeader.Location = new System.Drawing.Point(330, 4);
-      // 
       // checkMySQL
       // 
       this.checkMySQL.AutoSize = true;

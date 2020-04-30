@@ -39,10 +39,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.pbLavFilters)).BeginInit();
       this.SuspendLayout();
       // 
-      // labelSectionHeader
-      // 
-      this.labelSectionHeader.Location = new System.Drawing.Point(330, 4);
-      // 
       // grpLAV
       // 
       this.grpLAV.Controls.Add(this.linkLAV);

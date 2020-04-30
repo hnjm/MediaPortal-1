@@ -39,10 +39,6 @@ namespace MediaPortal.DeployTool.Sections
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.SuspendLayout();
       // 
-      // labelSectionHeader
-      // 
-      this.labelSectionHeader.Location = new System.Drawing.Point(330, 4);
-      // 
       // labelHeading1
       // 
       this.labelHeading1.AutoSize = true;
