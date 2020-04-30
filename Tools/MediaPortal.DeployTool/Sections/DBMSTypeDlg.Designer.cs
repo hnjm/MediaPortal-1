@@ -49,6 +49,10 @@ namespace MediaPortal.DeployTool.Sections
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
       this.SuspendLayout();
       // 
+      // labelSectionHeader
+      // 
+      this.labelSectionHeader.Location = new System.Drawing.Point(330, 4);
+      // 
       // labelHeading
       // 
       this.labelHeading.AutoSize = true;
@@ -240,7 +244,6 @@ namespace MediaPortal.DeployTool.Sections
       this.Controls.Add(this.rbMSSQL);
       this.Controls.Add(this.labelHeading);
       this.Name = "DBMSTypeDlg";
-      this.Size = new System.Drawing.Size(1000, 430);
       this.Controls.SetChildIndex(this.labelHeading, 0);
       this.Controls.SetChildIndex(this.labelSectionHeader, 0);
       this.Controls.SetChildIndex(this.rbMSSQL, 0);

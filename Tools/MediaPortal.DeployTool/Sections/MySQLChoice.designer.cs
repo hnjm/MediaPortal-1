@@ -38,6 +38,10 @@
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.SuspendLayout();
       // 
+      // labelSectionHeader
+      // 
+      this.labelSectionHeader.Location = new System.Drawing.Point(330, 4);
+      // 
       // checkMySQL
       // 
       this.checkMySQL.AutoSize = true;
@@ -116,7 +120,6 @@
       this.Controls.Add(this.lblRecommended);
       this.Controls.Add(this.grpMySQL);
       this.Name = "MySQLChoice";
-      this.Size = new System.Drawing.Size(1000, 430);
       this.Controls.SetChildIndex(this.labelSectionHeader, 0);
       this.Controls.SetChildIndex(this.grpMySQL, 0);
       this.Controls.SetChildIndex(this.lblRecommended, 0);

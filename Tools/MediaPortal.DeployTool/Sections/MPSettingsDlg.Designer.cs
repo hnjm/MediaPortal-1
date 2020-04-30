@@ -37,6 +37,10 @@ namespace MediaPortal.DeployTool.Sections
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.SuspendLayout();
       // 
+      // labelSectionHeader
+      // 
+      this.labelSectionHeader.Location = new System.Drawing.Point(330, 4);
+      // 
       // buttonBrowse
       // 
       this.buttonBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -101,11 +105,11 @@ namespace MediaPortal.DeployTool.Sections
       // 
       // pictureBox1
       // 
-      this.pictureBox1.Image = global::MediaPortal.DeployTool.Images.Mediaportal_Box;
-      this.pictureBox1.Location = new System.Drawing.Point(40, 70);
+      this.pictureBox1.Image = global::MediaPortal.DeployTool.Images.Mediaportal_Box_White;
+      this.pictureBox1.Location = new System.Drawing.Point(-50, 50);
       this.pictureBox1.Name = "pictureBox1";
-      this.pictureBox1.Size = new System.Drawing.Size(176, 357);
-      this.pictureBox1.TabIndex = 24;
+      this.pictureBox1.Size = new System.Drawing.Size(374, 357);
+      this.pictureBox1.TabIndex = 26;
       this.pictureBox1.TabStop = false;
       // 
       // MPSettingsDlg
@@ -119,7 +123,6 @@ namespace MediaPortal.DeployTool.Sections
       this.Controls.Add(this.labelInstDir);
       this.Controls.Add(this.labelHeading);
       this.Name = "MPSettingsDlg";
-      this.Size = new System.Drawing.Size(1000, 430);
       this.Controls.SetChildIndex(this.labelSectionHeader, 0);
       this.Controls.SetChildIndex(this.labelHeading, 0);
       this.Controls.SetChildIndex(this.labelInstDir, 0);
