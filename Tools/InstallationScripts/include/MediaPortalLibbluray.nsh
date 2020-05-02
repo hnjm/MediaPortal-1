@@ -35,7 +35,19 @@
 !include ${git_InstallScripts}\include\CompileTimeIfFileExist.nsh
 
 !macro macro_build_libbluray_jar
-!system 'ant -f ${LibblurayJAR} -Dsrc_awt=:java-j2se' = 0
+
+!ifndef $%ANT_HOME%
+!define ANT_HOME "${git_NugetPackages}\ANT.1.10.7\tools\bin\"
+!echo "BUILD MESSAGE: ant_home variable system not found - Using ANT Nuget Package"
+#!system '${ANT_HOME}ant -f ${LibblurayJAR} -Dsrc_awt=:java-j2se' = 0
+!else
+!echo "local ANT_HOME system variable found to $%ANT_HOME% and use it"
+!define ANT_HOME ""
+#!system 'ant -f ${LibblurayJAR} -Dsrc_awt=:java-j2se' = 0
+!endif
+
+!system '${ANT_HOME}ant -f ${LibblurayJAR} -Dsrc_awt=:java-j2se' = 0
+
 !macroend 
 
 !macro macro_check_libbluray
