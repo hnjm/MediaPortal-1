@@ -43,3 +43,12 @@
 !system '"${git_UninstallFilelist}\UninstallFilelist\bin\Release\UninstallFilelist.exe" /dir="${git_MP}\MediaPortal.Base" /ignore="${git_MP}\Setup\uninstall-ignore.txt" /output="${git_MP}\Setup\uninstall.nsh"' = 0
 
 !undef git_UninstallFilelist
+
+
+#
+!include "${git_InstallScripts}\include\MediaPortalLibbluray.nsh"
+
+!ifndef GIT_LIBBLURAY_VERSION
+  !insertmacro macro_check_libbluray
+  !echo "BUILD MESSAGE : LIBBLURAY VERSION ${GIT_LIBBLURAY_VERSION} "
+!endif

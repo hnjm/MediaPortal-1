@@ -65,7 +65,6 @@
 #---------------------------------------------------------------------------
 !include "${git_MP}\Setup\setup-preBuild.nsh"
 
-
 #---------------------------------------------------------------------------
 # DEFINES
 #---------------------------------------------------------------------------
@@ -137,11 +136,7 @@ Var PREVIOUS_KEYMAPSETTINGS
 !endif
 !include "${git_InstallScripts}\pages\UninstallModePage.nsh"
 
-!include "${git_InstallScripts}\include\MediaPortalLibbluray.nsh"
 
-!ifndef GIT_LIBBLURAY_VERSION
-  !insertmacro macro_check_libbluray
-!endif
 
 #---------------------------------------------------------------------------
 # INSTALLER INTERFACE settings
