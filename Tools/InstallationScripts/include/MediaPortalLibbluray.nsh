@@ -96,12 +96,14 @@ Section libbluray
 
 	Libbluray_NugetCheck_label:
 
-    ; ${!IfExist} "${git_NugetPackages}\Libbluray.${GIT_LIBBLURAY_VERSION}"
-    !insertmacro CompileTimeIfFileExist "$${git_NugetPackages}\Libbluray.${GIT_LIBBLURAY_VERSION}" libbluray_nuget_is_present
+    ; ${!IfExist} "${git_NugetPackages}\MediaPortal.libbluray.${GIT_LIBBLURAY_VERSION}"
+    !insertmacro CompileTimeIfFileExist "${git_NugetPackages}\MediaPortal.libbluray.${GIT_LIBBLURAY_VERSION}" libbluray_nuget_is_present
 
 	!ifdef libbluray_nuget_is_present
 			!echo "BUILD MESSAGE: Libbluray Nuget Package is present and match to libbluray git version"
-			!define Libbluray_use_Nuget_JAR "${git_NugetPackages}\Libbluray.${GIT_LIBBLURAY_VERSION}"
+			!define Libbluray_use_Nuget_JAR
+			!define Libbluray_use_Nuget_DLL
+			!define Libbluray_nuget_path "${git_NugetPackages}\MediaPortal.libbluray.${GIT_LIBBLURAY_VERSION}"
 	!else 
 			!echo "BUILD MESSAGE: Libbluray Nuget Package missing OR don't match to local git libbluray version OR libbluray is missing"
 			!echo "BUILD MESSAGE: Libbluray will be build using MSbuild"

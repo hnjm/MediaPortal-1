@@ -643,15 +643,15 @@ Section "MediaPortal core files (required)" SecCore
      !endif
   !else
        !if ${BUILD_TYPE} == "Debug"       # it's an debug build
-       File /oname=bluray.dll "${Libbluray_use_nuget_path}\lib\debug\bluray.dll"
+       File /oname=bluray.dll "${Libbluray_nuget_path}\references\runtimes\Release\libbluray.dll"
      !else
-       File /oname=bluray.dll "${Libbluray_use_nuget_path}\lib\release\bluray.dll"
+       File /oname=bluray.dll "${Libbluray_nuget_path}\references\runtimes\Debug\libbluray.dll"
 	 !endif
   !endif
   !ifndef Libbluray_use_Nuget_JAR
        File /oname=libbluray.jar "${git_Libbluray}\src\.libs\libbluray-.jar"
   !else
-	   File /oname=libbluray.jar "${Libbluray_use_nuget_path}\lib\bdj\libbluray.jar"
+	   File /oname=libbluray.jar "${Libbluray_nuget_path}\references\runtimes\libbluray-.jar"
   !endif
   CopyFiles /SILENT "$MPdir.Base\libbluray.jar" "$MPdir.Base\libbluray-j2se-${GIT_LIBBLURAY_VERSION}.jar"
     ; libbluray - Awt file
@@ -659,7 +659,7 @@ Section "MediaPortal core files (required)" SecCore
    !ifndef Libbluray_use_Nuget_JAR
        File /oname=libbluray.jar "${git_Libbluray}\src\.libs\libbluray-awt-.jar"
    !else 
-	   File /oname=libbluray.jar "${Libbluray_use_nuget_path}\lib\bdj\libbluray-awt.jar"
+	   File /oname=libbluray.jar "${Libbluray_nuget_path}\references\runtimes\libbluray-awt-.jar"
    !endif
     SetOutPath "$MPdir.Base"
   ; libbluray - submodul freetype library
@@ -671,9 +671,9 @@ Section "MediaPortal core files (required)" SecCore
      !endif
   !else
     !if ${BUILD_TYPE} == "Debug"       # it's an debug build
-    File /oname=freetype.dll "$${Libbluray_use_nuget_path}\lib\debug\freetype.dll"
+    File /oname=freetype.dll "${Libbluray_nuget_path}\references\runtimes\Release\freetype.dll"
     !else
-    File /oname=freetype.dll "$${Libbluray_use_nuget_path}\lib\release\freetype.dll"
+    File /oname=freetype.dll "${Libbluray_nuget_path}\references\runtimes\Debug\freetype.dll"
 	!endif
   !endif
   
