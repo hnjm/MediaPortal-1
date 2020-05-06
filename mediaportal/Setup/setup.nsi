@@ -65,6 +65,11 @@
 #---------------------------------------------------------------------------
 !include "${git_MP}\Setup\setup-preBuild.nsh"
 
+!ifndef GIT_LIBBLURAY_VERSION
+!include "${git_InstallScripts}\include\MediaPortalLibbluray.nsh"
+!echo "BUILD MESSAGE : LIBBLURAY VERSION ${GIT_LIBBLURAY_VERSION} "
+!endif
+
 #---------------------------------------------------------------------------
 # DEFINES
 #---------------------------------------------------------------------------

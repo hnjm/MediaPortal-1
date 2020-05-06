@@ -65,7 +65,6 @@
 
 !ifdef BUILD_MediaPortal
 !include "${git_InstallScripts}\include\MediaPortalLibbluray.nsh"
-!insertmacro macro_check_libbluray
 !insertmacro PrepareBuildReport DirectShowFilters
 !ifdef x64Environment
 !system '"C:\Program Files (x86)\MSBuild\14.0\Bin\MSBUILD.exe" ${logger} /target:rebuild /property:Configuration=Release "${git_DirectShowFilters}\Filters.sln"' = 0
