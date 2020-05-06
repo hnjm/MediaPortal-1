@@ -72,7 +72,7 @@ Section libbluray
 	# check if file exist 
 	!insertmacro CompileTimeIfFileExist "${git_DirectShowFilters}\BDReader\packages.config" BDReader_packages.config_is_present
 	!ifdef BDReader_packages.config_is_present
-		!searchparse /file "${git_DirectShowFilters}\BDReader\packages.config" `<package id="MP_Libbluray" version="` GIT_LIBBLURAY_VERSION `"`
+		!searchparse /file "${git_DirectShowFilters}\BDReader\packages.config" `<package id="MediaPortal.libbluray" version="` GIT_LIBBLURAY_VERSION `"`
 		!echo "BUILD MESSAGE: Libbluray version read from BDReader project : ${GIT_LIBBLURAY_VERSION}"
 		Goto Libbluray_NugetCheck_label
 	!endif
