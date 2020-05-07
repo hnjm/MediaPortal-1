@@ -66,7 +66,7 @@ Section libbluray
 	
 !ifdef force_libbluray_version_is_present
 	# file MediaPortal.libbluray_to_use.txt must contain text as example: #define BLURAY_VERSION_STRING "1.1.2" if set to 0.0.0 it will use git libbluray
-	!searchparse /file "${git_NugetPackages}\MediaPortal.libbluray_to_use.txt" `#define BLURAY_VERSION_STRING "` GIT_LIBBLURAY_VERSION `"`
+	!searchparse /noerrors /file "${git_NugetPackages}\MediaPortal.libbluray_to_use.txt" `#define BLURAY_VERSION_STRING "` GIT_LIBBLURAY_VERSION `"`
 	!echo "BUILD MESSAGE: MediaPortal.libbluray_to_use.txt point to ${GIT_LIBBLURAY_VERSION} and found in ${git_NugetPackages}"
 		!if ${GIT_LIBBLURAY_VERSION} != "0.0.0"
 			!define _Libbluray_NugetCheck
@@ -77,9 +77,13 @@ Section libbluray
 !else
 	# Give libbluray Nuget package from package.config BDReader project
 	!ifdef BDReader_packages.config_is_present
-		!searchparse /file "${git_DirectShowFilters}\BDReader\packages.config" `<package id="MediaPortal.libbluray" version="` GIT_LIBBLURAY_VERSION `"`
+		!searchparse /noerrors /file "${git_DirectShowFilters}\BDReader\packages.config" `<package id="MediaPortal.libbluray" version="` GIT_LIBBLURAY_VERSION `"`
 		!echo "BUILD MESSAGE: Libbluray version read from BDReader project : ${GIT_LIBBLURAY_VERSION}"
+		!ifdef GIT_LIBBLURAY_VERSION
 		!define _Libbluray_NugetCheck
+		!else 
+		!echo "BUILD MESSAGE: Libbluray version read from BDReader project is wrong, use build libbluray"
+		!endif
 	!else
 		# Give libbluray version from bluray-version file available in libbluray submodule
 		!ifdef bluray-version.h_is_present
@@ -108,7 +112,7 @@ Section libbluray
 !ifdef libbluray_nuget_is_present
 	!echo "BUILD MESSAGE: Libbluray Nuget Package is present and match to wanted version : ${GIT_LIBBLURAY_VERSION} "
 	!define Libbluray_use_Nuget_JAR
-	!ifdef libbluray.vcxproj_is_present
+	!ifndef libbluray.vcxproj_is_present
 	!define Libbluray_use_Nuget_DLL
 	!endif
 	!define Libbluray_nuget_path "${git_NugetPackages}\MediaPortal.libbluray.${GIT_LIBBLURAY_VERSION}"
