@@ -64,7 +64,7 @@
 !system '"$%ProgramFiles(x86)%\MSBuild\14.0\Bin\MSBUILD.exe" "${git_ROOT}\Build\RestorePackages.targets"' = 0
 
 !ifdef BUILD_MediaPortal
-!system 'ant -f ${LibblurayJAR} -Dsrc_awt=:java-j2se' = 0
+!include "${git_InstallScripts}\include\MediaPortalLibbluray.nsh"
 !insertmacro PrepareBuildReport DirectShowFilters
 !ifdef x64Environment
 !system '"C:\Program Files (x86)\MSBuild\14.0\Bin\MSBUILD.exe" ${logger} /target:rebuild /property:Configuration=Release "${git_DirectShowFilters}\Filters.sln"' = 0

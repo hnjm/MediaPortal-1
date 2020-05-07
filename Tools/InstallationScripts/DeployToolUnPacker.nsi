@@ -70,6 +70,9 @@
 !define BUILD_DeployTool
 !define BUILD_Installer
 
+; uncomment one of the following lines to force build
+;!define FORCE_BUILD_Libbluray_jar
+
 !include "include-MP-PreBuild.nsh"
 
 
